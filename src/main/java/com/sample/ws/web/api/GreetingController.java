@@ -26,6 +26,12 @@ public class GreetingController {
 	@Autowired
 	GreetingService greetingService;
 	
+	@RequestMapping(value= "/", method = RequestMethod.GET)
+	public String mainPage(){
+		
+		return "home";
+	}
+	
 
 	@RequestMapping(value = "/api/greetings", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<Collection<Greeting>> getGreetings() {
